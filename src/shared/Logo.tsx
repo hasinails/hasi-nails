@@ -1,5 +1,6 @@
 import logoLightImg from "@/images/logo-light.png";
 import logoImg from "@/images/logo.png";
+import { routeMap } from "@/utils/routeMap";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -17,7 +18,7 @@ const Logo: React.FC<LogoProps> = ({
 }) => {
   return (
     <Link
-      href="/"
+      href={routeMap.index}
       className={`ttnc-logo inline-block text-primary-6000 focus:outline-none focus:ring-0 ${className}`}
     >
       {/* <LogoSvgLight />

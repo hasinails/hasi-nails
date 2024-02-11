@@ -1,0 +1,27 @@
+{
+  "homepage": {
+    "welcome": "Herzlich willkommen bei Hasi Nail",
+    "slogan": "Ihr Hand- und Nagelpflege Institut"
+  },
+  "pricing": {
+    "routing": "Preise",
+    "title": "Preise"
+  },
+  "gallery": {
+    "routing": "Galerie",
+    "title": "Galerie"
+  },
+  "about": {
+    "routing": "Über uns",
+    "title": "👋 Über uns.",
+    "text": "Dies ist ein einfaches Beispiel für eine statische Website, die den Eleventy-Generator für statische Websites verwendet. Es verwendet Nunjucks für das Templating und Markdown für den Inhalt. Die Website wird auf Netlify bereitgestellt und der Quellcode wird auf GitHub gehostet."
+  },
+  "contact": {
+    "routing": "Kontakt",
+    "addressText": "Adresse",
+    "phoneText": "Telefon",
+    "workingTimeText": "Arbeitszeit",
+    "socialText": "Sozial",
+    "title": "Kontakt"
+  }
+}

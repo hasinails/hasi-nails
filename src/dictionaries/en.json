@@ -1,0 +1,27 @@
+{
+  "homepage": {
+    "welcome": "Hasi Nails",
+    "slogan": "Your hand and nails care INSTITUTE"
+  },
+  "pricing":{
+    "routing":"Pricing",
+    "title":"Pricing"
+  },
+  "gallery": {
+    "routing": "Gallery",
+    "title": "Gallery"
+  },
+  "about": {
+    "routing": "About Us",
+    "title": "👋 About Us.",
+    "text": "This is a simple example of a static website using the Eleventy static site generator. It uses Nunjucks for templating and Markdown for content. The site is deployed to Netlify and the source code is hosted on GitHub."
+  },
+  "contact": {
+    "routing": "Contact",
+    "addressText": "Address",
+    "phoneText": "Phone",
+    "workingTimeText": "Working time",
+    "socialText": "Social",
+    "title": "Contact"
+  }
+}

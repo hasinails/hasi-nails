@@ -4,6 +4,10 @@ import {
   HeartIcon,
   MagnifyingGlassIcon,
   UserCircleIcon,
+  HomeIcon,
+  SparklesIcon,
+  PhotoIcon
+
 } from "@heroicons/react/24/outline";
 import React, { useEffect, useRef } from "react";
 import { PathName } from "@/routers/types";
@@ -11,6 +15,7 @@ import MenuBar from "@/shared/MenuBar";
 import isInViewport from "@/utils/isInViewport";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { routeMap } from "@/utils/routeMap";
 
 let WIN_PREV_POSITION = 0;
 if (typeof window !== "undefined") {
@@ -23,29 +28,34 @@ interface NavItem {
   icon: any;
 }
 
-const NAV: NavItem[] = [
-  {
-    name: "Explore",
-    link: "/",
-    icon: MagnifyingGlassIcon,
-  },
-  {
-    name: "Wishlists",
-    link: "/account-savelists",
-    icon: HeartIcon,
-  },
-  {
-    name: "Log in",
-    link: "/account",
-    icon: UserCircleIcon,
-  },
-  {
-    name: "Menu",
-    icon: MenuBar,
-  },
-];
 
-const FooterNav = () => {
+type Props = {
+  navTitle: any;
+};
+const FooterNav = ({ navTitle }: Props) => {
+
+  const NAV: NavItem[] = [
+    {
+      name: "Hasi",
+      link: routeMap.index,
+      icon: HomeIcon,
+    },
+    {
+      name: navTitle.pricing,
+      link: routeMap.pricing.index,
+      icon: SparklesIcon,
+    },
+    {
+      name: navTitle.gallery,
+      link: routeMap.gallery.index,
+      icon: PhotoIcon,
+    },
+    {
+      name: 'Menu',
+      icon: MenuBar,
+    },
+  ];
+
   const containerRef = useRef<HTMLDivElement>(null);
 
   const pathname = usePathname();
@@ -101,15 +111,13 @@ const FooterNav = () => {
       <Link
         key={index}
         href={item.link}
-        className={`flex flex-col items-center justify-between text-neutral-500 dark:text-neutral-300/90 ${
-          isActive ? "text-neutral-900 dark:text-neutral-100" : ""
-        }`}
+        className={`flex flex-col items-center justify-between text-neutral-500 dark:text-neutral-300/90 ${isActive ? "text-neutral-900 dark:text-neutral-100" : ""
+          }`}
       >
         <item.icon className={`w-6 h-6 ${isActive ? "text-red-600" : ""}`} />
         <span
-          className={`text-[11px] leading-none mt-1 ${
-            isActive ? "text-red-600" : ""
-          }`}
+          className={`text-[11px] leading-none mt-1 ${isActive ? "text-red-600" : ""
+            }`}
         >
           {item.name}
         </span>
@@ -117,9 +125,8 @@ const FooterNav = () => {
     ) : (
       <div
         key={index}
-        className={`flex flex-col items-center justify-between text-neutral-500 dark:text-neutral-300/90 ${
-          isActive ? "text-neutral-900 dark:text-neutral-100" : ""
-        }`}
+        className={`flex flex-col items-center justify-between text-neutral-500 dark:text-neutral-300/90 ${isActive ? "text-neutral-900 dark:text-neutral-100" : ""
+          }`}
       >
         <item.icon iconClassName="w-6 h-6" className={``} />
         <span className="text-[11px] leading-none mt-1">{item.name}</span>

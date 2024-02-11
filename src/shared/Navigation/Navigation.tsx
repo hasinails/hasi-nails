@@ -1,11 +1,13 @@
 import React from "react";
-import NavigationItem from "./NavigationItem";
+import NavigationItem, { NavItemType } from "./NavigationItem";
 import { NAVIGATION_DEMO } from "@/data/navigation";
-
-function Navigation() {
+type Props = {
+  navigation: NavItemType[];
+};
+function Navigation({navigation}:Props) {
   return (
     <ul className="nc-Navigation hidden lg:flex lg:flex-wrap lg:space-x-1 relative">
-      {NAVIGATION_DEMO.map((item) => (
+      {navigation.map((item) => (
         <NavigationItem key={item.id} menuItem={item} />
       ))}
     </ul>

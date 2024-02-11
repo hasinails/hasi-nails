@@ -141,3 +141,9 @@ export interface CarDataType {
     lng: number;
   };
 }
+
+export type ImgurResponse<T> = {
+  data: T;
+  success: boolean;
+  status: number;
+};

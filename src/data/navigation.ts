@@ -2,6 +2,7 @@ import { MegamenuItem, NavItemType } from "@/shared/Navigation/NavigationItem";
 import ncNanoId from "@/utils/ncNanoId";
 import { Route } from "@/routers/types";
 import __megamenu from "./jsons/__megamenu.json";
+import { routeMap } from "@/utils/routeMap";
 
 const megaMenuDemo: MegamenuItem[] = [
   {
@@ -166,22 +167,22 @@ const templatesChildrenMenus: NavItemType[] = [
 export const NAVIGATION_DEMO: NavItemType[] = [
   {
     id: ncNanoId(),
-    href: "/pricing",
+    href: routeMap.pricing.index,
     name: "Pricing",
   },
   {
     id: ncNanoId(),
-    href: "/gallery",
+    href: routeMap.gallery.index,
     name: "Gallery",
   },
   {
     id: ncNanoId(),
-    href: "/about",
+    href: routeMap.about.index,
     name: "About us",
   },
   {
     id: ncNanoId(),
-    href: "/contact",
+    href: routeMap.contact.index,
     name: "Contact",
   },
   // {
