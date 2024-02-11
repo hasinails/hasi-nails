@@ -7,14 +7,14 @@ import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import { variants } from "@/utils/animationVariants";
 import Link from "next/link";
-import { Route } from "@/routers/types";
+import { PathName, Route } from "@/routers/types";
 
 export interface GallerySliderProps {
   className?: string;
   galleryImgs: (StaticImageData | string)[];
   ratioClass?: string;
   uniqueID: string;
-  href?: Route<string>;
+  href?: PathName;
   imageClass?: string;
   galleryClass?: string;
   navigation?: boolean;
@@ -74,7 +74,7 @@ export default function GallerySlider({
         {/* Main image */}
         <div className={`w-full overflow-hidden ${galleryClass}`}>
           <Link
-            href={href}
+            href={{href}}
             className={`relative flex items-center justify-center ${ratioClass}`}
           >
             <AnimatePresence initial={false} custom={direction}>

@@ -1,4 +1,4 @@
-import { availableLocales } from '@/middleware'
+import { availableLocales } from '@/utils/i18n'
 import { usePathname, useRouter } from 'next/navigation'
 import React, { useCallback } from 'react'
 
