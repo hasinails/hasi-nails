@@ -1,5 +1,5 @@
 import logoLightImg from "@/images/logo-light.png";
-import logoImg from "@/images/logo.png";
+import logoImg from "public/logo.png";
 import { routeMap } from "@/utils/routeMap";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
