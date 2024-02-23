@@ -38,7 +38,7 @@ const PAGES_HIDE_HEADER_BORDER: PathName[] = [
 type Props = {
   navTitle: any;
 };
-const SiteHeader = ({navTitle}:Props) => {
+const SiteHeader = ({ navTitle }: Props) => {
 
   const NAVIGATION: NavItemType[] = [
     {
@@ -51,15 +51,27 @@ const SiteHeader = ({navTitle}:Props) => {
       href: routeMap.gallery.index,
       name: navTitle.gallery,
     },
-    // {
-    //   id: ncNanoId(),
-    //   href: routeMap.about.index,
-    //   name: navTitle.about,
-    // },
     {
       id: ncNanoId(),
       href: routeMap.contact.index,
       name: navTitle.contact,
+      type: "dropdown",
+      children: [
+        {
+          id: ncNanoId(),
+          href: routeMap.contact.index,
+          name: 'Contact',
+        },
+        {
+          id: ncNanoId(),
+          href: routeMap.impressum.index,
+          name: 'Impressum',
+        },
+        {
+          id: ncNanoId(),
+          href: routeMap.datenschutz.index,
+          name: 'Datenschutz',
+        }]
     }]
 
   const anchorRef = useRef<HTMLDivElement>(null);
@@ -112,11 +124,10 @@ const SiteHeader = ({navTitle}:Props) => {
             return (
               <div
                 key={header}
-                className={`py-1.5 px-3.5 flex items-center rounded-full font-medium text-xs cursor-pointer select-none ${
-                  headerSelected === header
-                    ? "bg-black text-white shadow-black/10 shadow-lg"
-                    : "border border-neutral-300 dark:border-neutral-700 hover:border-neutral-400 dark:hover:border-neutral-500"
-                }`}
+                className={`py-1.5 px-3.5 flex items-center rounded-full font-medium text-xs cursor-pointer select-none ${headerSelected === header
+                  ? "bg-black text-white shadow-black/10 shadow-lg"
+                  : "border border-neutral-300 dark:border-neutral-700 hover:border-neutral-400 dark:hover:border-neutral-500"
+                  }`}
                 onClick={() => setHeaderSelected(header)}
               >
                 {header}
@@ -138,11 +149,10 @@ const SiteHeader = ({navTitle}:Props) => {
               <Link
                 key={home.slug}
                 href={home.slug}
-                className={`py-1.5 px-3.5 flex items-center rounded-full font-medium text-xs cursor-pointer select-none ${
-                  pathname === home.slug
-                    ? "bg-black text-white shadow-black/10 shadow-lg"
-                    : "border border-neutral-300 dark:border-neutral-700 hover:border-neutral-400 dark:hover:border-neutral-500"
-                }`}
+                className={`py-1.5 px-3.5 flex items-center rounded-full font-medium text-xs cursor-pointer select-none ${pathname === home.slug
+                  ? "bg-black text-white shadow-black/10 shadow-lg"
+                  : "border border-neutral-300 dark:border-neutral-700 hover:border-neutral-400 dark:hover:border-neutral-500"
+                  }`}
               >
                 {home.name}
               </Link>
@@ -162,9 +172,8 @@ const SiteHeader = ({navTitle}:Props) => {
             {({ open }) => (
               <>
                 <Popover.Button
-                  className={`p-2.5 bg-white hover:bg-neutral-100 dark:bg-primary-6000 dark:hover:bg-primary-700 rounded-xl shadow-xl border border-neutral-200 dark:border-primary-6000 z-10 focus:outline-none ${
-                    open ? " focus:ring-2 ring-primary-500" : ""
-                  }`}
+                  className={`p-2.5 bg-white hover:bg-neutral-100 dark:bg-primary-6000 dark:hover:bg-primary-700 rounded-xl shadow-xl border border-neutral-200 dark:border-primary-6000 z-10 focus:outline-none ${open ? " focus:ring-2 ring-primary-500" : ""
+                    }`}
                 >
                   <CogIcon className="w-8 h-8" />
                 </Popover.Button>
@@ -218,9 +227,9 @@ const SiteHeader = ({navTitle}:Props) => {
     }
     switch (headerSelected) {
       case "Header 1":
-        return <Header className={`${headerClassName} hidden md:block`} navType="MainNav1" navigation={NAVIGATION}/>;
+        return <Header className={`${headerClassName}`} navType="MainNav1" navigation={NAVIGATION} />;
       case "Header 2":
-        return <Header className={headerClassName} navType="MainNav2" navigation={NAVIGATION}/>;
+        return <Header className={headerClassName} navType="MainNav2" navigation={NAVIGATION} />;
       case "Header 3":
         return <Header3 className={headerClassName} />;
 

@@ -40,7 +40,7 @@ export default async function RootLayout({
         <ClientCommons />
         <SiteHeader navTitle={navTitle}/>
         {children}
-        <FooterNav navTitle={navTitle} />
+        {/* <FooterNav navTitle={navTitle} /> */}
         {/* <Footer /> */}
       </body>
     </html>

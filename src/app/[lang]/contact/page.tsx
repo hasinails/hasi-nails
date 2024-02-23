@@ -36,9 +36,11 @@ export const ContactAddress = ({dict}:{dict:any}) => {
     },
     {
       title: `⏰ ${dict.contact.workingTimeText}`,
-      desc: `Mo. – Fr.:  9:30 - 20:00 Uhr
+      desc: <span>Mo. – Fr.:  9:30 - 20:00 Uhr
+        <br/>
       Sa.: 9:30 - 19:00 Uhr
-     `,
+      </span>
+     ,
     },
     {
       title: `☎ ${dict.contact.phoneText}`,

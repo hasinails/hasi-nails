@@ -13,6 +13,13 @@ const ROUTE_MAP = {
     },
     contact: {
         index: "contact",
+    },
+    impressum: {
+        index: "impressum"
+    },
+    datenschutz: {
+        index: "datenschutz"
+
     }
 } as const;
 
@@ -30,7 +37,7 @@ const toPath = (parentPath: string, path: string) => {
 
 export function generateRouteMap(map: RouteMap = ROUTE_MAP, parentPath = "") {
     const result: any = {};
-    const locateStorage = selectedLocate().locate ||  "en-US";
+    const locateStorage = selectedLocate().locate || "en-US";
 
 
     for (const key in map) {
