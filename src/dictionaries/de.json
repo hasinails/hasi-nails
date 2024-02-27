@@ -1,7 +1,8 @@
 {
   "homepage": {
     "welcome": "Herzlich willkommen bei Hasi Nail",
-    "slogan": "Ihr Hand- und Nagelpflege Institut"
+    "slogan": "Ihr Hand- und Nagelpflege Institut",
+    "routing": "Startseite"
   },
   "pricing": {
     "routing": "Preise",

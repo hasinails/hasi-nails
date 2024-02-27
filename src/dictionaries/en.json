@@ -1,7 +1,8 @@
 {
   "homepage": {
     "welcome": "Hasi Nails",
-    "slogan": "Your hand and nails care INSTITUTE"
+    "slogan": "Your hand and nails care INSTITUTE",
+    "routing": "Home"
   },
   "pricing":{
     "routing":"Pricing",

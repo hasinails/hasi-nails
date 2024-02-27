@@ -167,6 +167,11 @@ const templatesChildrenMenus: NavItemType[] = [
 export const NAVIGATION_DEMO: NavItemType[] = [
   {
     id: ncNanoId(),
+    href: routeMap.index,
+    name: "Home",
+  },
+  {
+    id: ncNanoId(),
     href: routeMap.pricing.index,
     name: "Pricing",
   },
@@ -184,6 +189,11 @@ export const NAVIGATION_DEMO: NavItemType[] = [
     id: ncNanoId(),
     href: routeMap.contact.index,
     name: "Contact",
+    type: "dropdown",
+    children: [
+      { id: ncNanoId(), href: routeMap.impressum.index, name: "Impressum" },
+      { id: ncNanoId(), href: routeMap.datenschutz.index, name: "Datenschutz" },
+    ],
   },
   // {
   //   id: ncNanoId(),

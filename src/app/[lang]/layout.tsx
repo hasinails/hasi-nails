@@ -28,6 +28,7 @@ export default async function RootLayout({
   const dict = await getDictionary(params.lang);
 
   const navTitle ={
+    home: dict.homepage.routing,
     pricing: dict.pricing.routing,
     about: dict.about.routing,
     contact: dict.contact.routing,

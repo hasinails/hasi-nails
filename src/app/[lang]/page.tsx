@@ -16,6 +16,7 @@ import SectionClientSay from "@/components/SectionClientSay";
 import { ContactAddress, ContactMap } from "./contact/page";
 import { BasePageProps } from "@/types/page";
 import { DictionaryKeys, getDictionary } from "../../dictionaries/dictionaries";
+import Image from "next/image";
 
 // const DEMO_CATS: TaxonomyType[] = [
 //   {
@@ -156,11 +157,14 @@ async function PageHome({ params: { lang } }: BasePageProps) {
     <main className="nc-PageHome relative overflow-hidden">
       {/* GLASSMOPHIN */}
       <BgGlassmorphism />
+      <div className="container">
+        <Image src={'https://i.imgur.com/K5scsWE.jpg'} width={1520} height={0} className="object-cover h-[400px] md:h-[600px]" alt="Banner" />
+      </div>
 
       <div className="container relative space-y-24 mb-24 lg:space-y-28 lg:mb-28">
         {/* SECTION HERO */}
-        <SectionHero className="pt-10 lg:pt-16 lg:pb-16" slogan={dict.homepage.slogan} 
-        welcomeText={dict.homepage.welcome}
+        <SectionHero className="pt-10 lg:pt-16 lg:pb-16" slogan={dict.homepage.slogan}
+          welcomeText={dict.homepage.welcome}
         />
 
         {/* SECTION 1 */}
@@ -211,7 +215,7 @@ async function PageHome({ params: { lang } }: BasePageProps) {
           <BackgroundSection />
           <SectionClientSay />
         </div> */}
-        <ContactAddress dict={dict}/>
+        <ContactAddress dict={dict} />
         <ContactMap />
       </div>
     </main>

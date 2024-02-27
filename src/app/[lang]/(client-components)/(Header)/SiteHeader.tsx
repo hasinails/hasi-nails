@@ -43,6 +43,11 @@ const SiteHeader = ({ navTitle }: Props) => {
   const NAVIGATION: NavItemType[] = [
     {
       id: ncNanoId(),
+      href: routeMap.index,
+      name: navTitle.home,
+    },
+    {
+      id: ncNanoId(),
       href: routeMap.pricing.index,
       name: navTitle.pricing,
     },
