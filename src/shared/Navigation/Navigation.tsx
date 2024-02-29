@@ -1,6 +1,5 @@
 import React from "react";
 import NavigationItem, { NavItemType } from "./NavigationItem";
-import { NAVIGATION_DEMO } from "@/data/navigation";
 type Props = {
   navigation: NavItemType[];
 };

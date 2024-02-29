@@ -58,6 +58,11 @@ const SiteHeader = ({ navTitle }: Props) => {
     },
     {
       id: ncNanoId(),
+      href: routeMap.about.index,
+      name: navTitle.about,
+    },
+    {
+      id: ncNanoId(),
       href: routeMap.contact.index,
       name: navTitle.contact,
       type: "dropdown",
@@ -65,19 +70,21 @@ const SiteHeader = ({ navTitle }: Props) => {
         {
           id: ncNanoId(),
           href: routeMap.contact.index,
-          name: 'Contact',
+          name: navTitle.contact,
         },
         {
           id: ncNanoId(),
           href: routeMap.impressum.index,
-          name: 'Impressum',
+          name: "Impressum",
         },
         {
           id: ncNanoId(),
           href: routeMap.datenschutz.index,
-          name: 'Datenschutz',
-        }]
-    }]
+          name: "Datenschutz",
+        },
+      ],
+    },
+  ];
 
   const anchorRef = useRef<HTMLDivElement>(null);
 

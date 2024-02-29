@@ -1,4 +1,4 @@
-const avatarColors = [
+export const avatarColors = [
   "#ffdd00",
   "#fbb034",
   "#ff4c4c",
@@ -27,4 +27,4 @@ const avatarColors = [
   "#E208A7",
 ];
 
-export { avatarColors };
+export const GOOGLE_MAP_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;

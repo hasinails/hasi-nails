@@ -67,7 +67,7 @@ const MainNav1: FC<MainNav1Props> = ({ className = "", navigation }) => {
           <div className="flex xl:hidden items-center">
             <SwitchDarkMode />
             <div className="px-0.5" />
-            <MenuBar />
+            <MenuBar navigation={navigation}/>
           </div>
         </div>
       </div>

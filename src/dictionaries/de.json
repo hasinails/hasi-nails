@@ -14,8 +14,7 @@
   },
   "about": {
     "routing": "Über uns",
-    "title": "👋 Über uns.",
-    "text": "Dies ist ein einfaches Beispiel für eine statische Website, die den Eleventy-Generator für statische Websites verwendet. Es verwendet Nunjucks für das Templating und Markdown für den Inhalt. Die Website wird auf Netlify bereitgestellt und der Quellcode wird auf GitHub gehostet."
+    "title": "👋 Über uns."
   },
   "contact": {
     "routing": "Kontakt",
