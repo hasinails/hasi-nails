@@ -190,7 +190,7 @@ const Header3: FC<Header3Props> = ({ className = "" }) => {
 
                 <NotifyDropdown />
                 <AvatarDropdown />
-                <MenuBar />
+                {/* <MenuBar /> */}
               </div>
             </div>
           </div>

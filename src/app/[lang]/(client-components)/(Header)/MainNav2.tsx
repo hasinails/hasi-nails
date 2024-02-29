@@ -47,7 +47,7 @@ const MainNav2: FC<MainNav2Props> = ({ className = "" }) => {
           <div className="flex space-x-2 lg:hidden">
             <NotifyDropdown />
             <AvatarDropdown />
-            <MenuBar />
+            {/* <MenuBar /> */}
           </div>
         </div>
       </div>
