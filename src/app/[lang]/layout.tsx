@@ -14,12 +14,18 @@ import { getDictionary } from "@/dictionaries/dictionaries";
 import { NavItemType } from "@/shared/Navigation/NavigationItem";
 import ncNanoId from "@/utils/ncNanoId";
 import { routeMap } from "@/utils/routeMap";
+import { Metadata } from "next";
 
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
   weight: ["300", "400", "500", "600", "700"],
 });
+
+export const metadata: Metadata = {
+  title: 'Hasi Nails',
+  description: 'Your hand and nails care INSTITUTE',
+}
 
 export default async function RootLayout({
   children,
@@ -37,6 +43,8 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={poppins.className}>
+      <link rel="icon" href="/favicon.ico" sizes="any" />
+    <meta name="google-site-verification" content="kFKThH6XNah--9TAckva4XKzNAq9M7q4TyyOwFo9E70" />
       <body className="bg-white text-base dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200">
         <ClientCommons />
         <SiteHeader navTitle={navTitle}/>
