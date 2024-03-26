@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://www.nagelstudioludwigsburg.de/sitemap.xml
