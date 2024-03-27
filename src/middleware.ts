@@ -1,20 +1,24 @@
-import Negotiator from 'negotiator'
 import { match } from '@formatjs/intl-localematcher'
-import { NextResponse, type NextRequest } from 'next/server'
+import Negotiator from 'negotiator'
+import { type NextRequest } from 'next/server'
 import { availableLocales, defaultLocale, hasLocale } from './utils/i18n'
 
+const excludedPaths = ['/_next', '/api', '/favicon.ico', '/robots.txt', '/sitemap.xml']
 
 function getLocale(request: NextRequest) {
   const languages = new Negotiator({ headers: { 'accept-language': request.headers.get('accept-language') } as any }).languages()
 
   const matchedLocate = match(languages, availableLocales, defaultLocale)
-  // console.log('request.headers.get', request.cookies)
   return matchedLocate
 }
 
 export function middleware(request: NextRequest) {
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl
+
+  // Skip excluded paths
+  if (excludedPaths.some((path) => pathname.startsWith(path))) return
+
   const pathnameHasLocale = hasLocale(pathname)
   if (pathnameHasLocale) return
 
@@ -30,7 +34,5 @@ export const config = {
   matcher: [
     // Skip all internal paths (_next)
     '/((?!_next).*)',
-    // Optional: only run on root (/) URL
-    // '/'
   ],
 }
