@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     "Hasi Nails",
     "nagelstudioludwigsburg.de",
     "nagelstudioludwigsburg de",
+    "Nails ludwigsburg", 
+    "Hasinails ludwigsburg", 
+    "nagelstudio hasi" 
   ],
 };
 
